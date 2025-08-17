@@ -1,0 +1,37 @@
+/*
+	Description :- Accept the number from user and return the summation of Digits
+	Author :- Pranav R Sonawane
+*/
+
+#include<stdio.h>
+
+int SumDigits(int iNo)
+{
+	int iSum = 0;
+	
+	if(iNo < 0) // Updater
+	{
+		iNo = -iNo;
+	}
+	
+	while(iNo != 0) 
+	{
+		iSum = iSum + (iNo % 10);
+		iNo /= 10;
+	}
+	return iSum;
+}
+
+int main()
+{
+	int iValue = 0;
+	int iRet = 0;
+	
+	printf("Enter the number : \n");
+	scanf("%d",&iValue);
+	
+	iRet = SumDigits(iValue);
+	printf("Summation of Digits are : %d\n",iRet);
+	
+	return 0;
+}
